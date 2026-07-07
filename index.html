@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a class="active" href="index.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="qualifications.html">Qualifications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Dharmang_Resume.pdf" download>Resume</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <div class="hero-copy">
+                <p class="subtitle">Hi, my name is</p>
+                <h1>Dharmang Shah</h1>
+                <p class="bio">I’m a Computer Science student at California State University, Sacramento, building practical software solutions with Python, NLP, machine learning, and data-driven workflows.</p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn">Get In Touch</a>
+                    <a href="projects.html" class="btn btn-secondary">See Projects</a>
+                </div>
+                <div class="hero-highlights">
+                    <div class="highlight-card">
+                        <span class="highlight-number">1</span>
+                        <p>TalentPulse AI project focused on NLP, ETL workflows, and intelligent candidate ranking.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-number">4+</span>
+                        <p>Programming languages and tools including Python, Java, C, R, SQL, pandas, NumPy, and Git.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-number">3</span>
+                        <p>Professional and technical roles spanning IT support, food service operations, and internships.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="image-frame">
+                    <img src="photo.jpg" alt="Photo of Dharmang Shah" class="hero-image" draggable="false" oncontextmenu="return false;" onmousedown="if (event.button === 2) { event.preventDefault(); alert('Image download is disabled.'); }">
+                </div>
+            </div>
+        </header>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const image = document.querySelector('.hero-image');
+            if (!image) return;
+
+            image.addEventListener('dragstart', (event) => event.preventDefault());
+
+            document.addEventListener('keydown', (event) => {
+                if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
+                    event.preventDefault();
+                    alert('Image download is disabled.');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
