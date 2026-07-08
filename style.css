@@ -346,6 +346,58 @@ body {
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
+.resume-page .resume-card {
+    padding: 1.25rem;
+}
+
+.resume-preview-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.resume-preview-header a.btn {
+    margin-left: auto;
+}
+
+.pdf-preview {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.pdf-preview object {
+    display: block;
+    width: 100%;
+    height: min(80vh, 900px);
+    max-height: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+@media (max-width: 860px) {
+    .pdf-preview object {
+        height: min(70vh, 760px);
+    }
+}
+
+@media (max-width: 640px) {
+    .resume-page {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .resume-page .resume-card {
+        padding: 1rem;
+    }
+
+    .pdf-preview object {
+        height: min(64vh, 600px);
+    }
+}
+
 .highlight-card:hover {
     transform: translateY(-3px);
     border-color: rgba(255, 122, 24, 0.35);
@@ -691,8 +743,9 @@ html,
 body {
     width: 100%;
     overflow-x: hidden;
+    overflow-y: auto;
     overscroll-behavior-x: none;
-    overscroll-behavior-y: contain;
+    overscroll-behavior-y: auto;
 }
 
 @media (max-width: 860px) {
