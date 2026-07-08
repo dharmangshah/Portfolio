@@ -129,13 +129,27 @@ section {
 }
 
 section h2 {
+    position: relative;
     font-size: 2rem;
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: flex-start;
+    margin-bottom: 1rem;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
     text-align: left;
+}
+
+section h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 120px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+}
+
+section .section-description {
+    margin-bottom: 2rem;
 }
 
 /* Grid layout: 1 column on mobile, 2 columns on desktops */
@@ -265,21 +279,23 @@ body {
 .hero-right {
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
 }
 
 .image-frame {
     position: relative;
     width: 100%;
-    min-height: 420px;
+    min-height: 320px;
     max-height: 520px;
-    aspect-ratio: 0.83;
     border-radius: 32px;
-    padding: 0rem;
+    padding: 0;
     background: linear-gradient(180deg, rgba(18, 24, 43, 0.98), rgba(8, 13, 25, 0.92));
     border: 1px solid rgba(255, 122, 24, 0.24);
     box-shadow: 0 34px 90px rgba(0, 0, 0, 0.4);
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-frame::before {
@@ -293,12 +309,14 @@ body {
 }
 
 .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     border-radius: 24px;
     position: relative;
     z-index: 1;
+    background-color: rgba(15, 23, 42, 0.8);
 }
 
 .image-label {
@@ -704,9 +722,22 @@ body {
     .image-frame {
         width: 100%;
         max-width: 100%;
-        min-height: 320px;
+        min-height: 280px;
         max-height: 420px;
-        aspect-ratio: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .contact-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-intro,
+    .contact-side-card {
+        width: 100%;
+    }
+
+    .contact-side-card {
+        margin-top: 1.25rem;
     }
 
     nav {
