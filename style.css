@@ -34,6 +34,8 @@ body {
     line-height: 1.65;
     padding: 0 1.5rem;
     min-height: 100vh;
+    -webkit-box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
 }
 
 /* Container to keep everything aligned and centered */
@@ -58,6 +60,7 @@ nav {
     display: flex;
     gap: 1.5rem;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -837,6 +840,22 @@ body {
     .project-grid,
     .contact-grid {
         grid-template-columns: 1fr;
+    }qualifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-pills {
+        gap: 0.4rem;
+    }
+
+    .nav-links {
+        gap: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
     }
 
     .skill-pills {
